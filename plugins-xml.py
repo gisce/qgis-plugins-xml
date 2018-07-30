@@ -728,7 +728,7 @@ class QgisPlugin(object):
         self.add_el(el, 'version', md)
         self.add_el(el, 'authorization_role', md)
         self.add_el(el, 'qgis_minimum_version', md)
-        self.add_el(el, 'qgis_maximum_version', md, default='2.99.0')
+        self.add_el(el, 'qgis_maximum_version', md, default='3.99.0')
         self.add_el(el, 'homepage', md)
         self.add_el(el, 'file_name', self.new_zip_name)
         self.add_el(el, 'icon', md['plugin_icon'])
