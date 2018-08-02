@@ -244,7 +244,7 @@ class QgisRepo(object):
             ic_pth = ic_el.text if ic_el is not None else None
             # print "ic_pth: {0}".format(ic_pth)
 
-            print "Removing from XML: {0}".format(plugin_name)
+            print("Removing from XML: {0}".format(plugin_name))
             plugins.remove(p)
             # print(etree.tostring(plugins_tree, pretty_print=True))
 
@@ -253,7 +253,7 @@ class QgisRepo(object):
                 # print "icon_path: {0}".format(icon_path)
                 if os.path.isfile(icon_path):
                     prnt_dir = os.path.dirname(icon_path)
-                    print "Removing icon: {0}".format(icon_path)
+                    print("Removing icon: {0}".format(icon_path))
                     os.remove(icon_path)
                     # print "ls dir: {0}".format(os.listdir(prnt_dir))
                     if not os.listdir(prnt_dir):
@@ -271,7 +271,7 @@ class QgisRepo(object):
             zip_path = os.path.join(self.web_plugins_dir, pkg_pth)
             # print "zip_path: {0}".format(zip_path)
             if os.path.isfile(zip_path):
-                print "Removing zip: {0}".format(zip_path)
+                print("Removing zip: {0}".format(zip_path))
                 os.remove(zip_path)
 
     def append_plugin_to_tree(self, plugin_elem):
@@ -401,7 +401,7 @@ class QgisPlugin(object):
             self._validate_archive()
             self.metadata = dict(self._validate_metadata())
             # print metadata
-        except ValidationError, e:
+        except ValidationError as e:
             msg = unicode('Not a valid plugin ZIP archive')
             raise ValidationError("{0}: {1}".format(msg, e))
 
@@ -570,7 +570,7 @@ class QgisPlugin(object):
                         "Cannot find a section named 'general' in {0}"
                         .format(metadataname))
                 metadata.extend(parser.items('general'))
-            except Exception, e:
+            except Exception as e:
                 raise ValidationError("Errors parsing {0}: {1}"
                                       .format(metadataname, e))
             metadata.append(('metadata_source', 'metadata.txt'))
@@ -621,7 +621,7 @@ class QgisPlugin(object):
                     checked_metadata.append((k, v.strip()))
                 else:
                     checked_metadata.append((k, v))
-            except UnicodeDecodeError, e:
+            except UnicodeDecodeError as e:
                 raise ValidationError(
                     "There was an error converting metadata '{0}' to UTF-8. "
                     "Reported error was: {1}".format(k, e))

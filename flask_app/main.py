@@ -65,7 +65,6 @@ def vjust(str, level=3, delim='.', bitsize=3, fillchar=' ', force_zero=False):
     return delim.join(parts)
 
 
-
 @app.route("/plugins.xml")
 @app.route("/plugins/plugins.xml")
 def filter_xml():
