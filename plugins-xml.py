@@ -43,9 +43,9 @@ from lxml import etree
 SCRIPT_DIR = os.path.dirname(__file__)
 WEB_BASE_TEST = os.path.join(SCRIPT_DIR, 'www')
 UPLOAD_BASE_TEST = SCRIPT_DIR
-UPLOADED_BY_TEST = "Boundless"
-DOMAIN_TLD_TEST = "boundless-test"
-DOMAIN_TLD_DEV_TEST = "boundless-test-dev"
+UPLOADED_BY_TEST = "Gisce"
+DOMAIN_TLD_TEST = "qgis-plugins.gisce.net"
+DOMAIN_TLD_DEV_TEST = "qgis-plugins.gisce.net"
 
 # Read configuration from a settings file
 # On deploy, assign correct base locations, uploader and domains
